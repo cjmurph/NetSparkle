@@ -142,6 +142,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetSparkleForms\NetSparkleForms.csproj">
+      <Project>{03d5f303-5246-4f45-b69b-3ce1d4edd8eb}</Project>
+      <Name>NetSparkleForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetSparkle\NetSparkle.csproj">
       <Project>{74635A21-2BAD-4522-AB95-E3E5703CD301}</Project>
       <Name>NetSparkle</Name>

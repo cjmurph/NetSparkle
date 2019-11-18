@@ -127,8 +127,10 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Delegates.cs" />
     <Compile Include="Enums\NextUpdateAction.cs" />
     <Compile Include="Enums\SecurityMode.cs" />
+    <Compile Include="Enums\SilentModeTypes.cs" />
     <Compile Include="Enums\UpdateAvailableResult.cs" />
     <Compile Include="Enums\UpdateStatus.cs" />
     <Compile Include="Enums\ValidationResult.cs" />

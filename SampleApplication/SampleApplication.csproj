@@ -102,16 +102,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetSparkle.NetFramework.WinForms\NetSparkle.UI.NetFramework.WinForms.csproj">
-      <Project>{45f5aadb-a39b-446f-8025-71647238bb89}</Project>
-      <Name>NetSparkle.UI.NetFramework.WinForms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NetSparkle\NetSparkle.csproj">
-      <Project>{74635A21-2BAD-4522-AB95-E3E5703CD301}</Project>
-      <Name>NetSparkle</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -125,6 +115,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="software-update-available.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetSparkleForms\NetSparkleForms.csproj">
+      <Project>{03d5f303-5246-4f45-b69b-3ce1d4edd8eb}</Project>
+      <Name>NetSparkleForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetSparkle\NetSparkle.csproj">
+      <Project>{74635a21-2bad-4522-ab95-e3e5703cd301}</Project>
+      <Name>NetSparkle</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,10 +24,10 @@ namespace NetSparkle.Interfaces
         void SetDownloadAndInstallButtonEnabled(bool shouldBeEnabled);
 
         /// <summary>
-        /// Show the UI for download progress
+        /// Show the UI and waits
         /// </summary>
         /// <returns>True if download was successful; false otherwise</returns>
-        void Show(bool isOnMainThread);
+        bool ShowDialog();
 
         /// <summary>
         /// Called when the download progress changes

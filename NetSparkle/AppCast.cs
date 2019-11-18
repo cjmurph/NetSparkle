@@ -314,7 +314,7 @@ namespace NetSparkle
         /// <summary>
         /// Returns sorted list of updates between current and latest. Installed is not included.
         /// </summary>
-        public AppCastItem[] GetUpdates()
+        public List<AppCastItem> GetUpdates()
         {
             Version installed = new Version(_config.InstalledVersion);
             var signatureNeeded = _dsaChecker.SignatureNeeded();
@@ -332,7 +332,7 @@ namespace NetSparkle
                     return false;
                 // accept everything else
                 return true;
-            }).ToArray();
+            }).ToList();
         }
     }
 }

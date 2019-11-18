@@ -1,17 +1,18 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-
 using NetSparkle;
 using NetSparkle.Enums;
+using NetSparkleForms;
 
 namespace NetSparkleChecker
 {
     public partial class NetSparkleCheckerWaitUI : Form
     {
-        private readonly Sparkle _sparkle;
-        private AppCastItem[] _updates;
+        private readonly SparkleForms _sparkle;
+        private List<AppCastItem> _updates;
 
         public bool SparkleRequestedUpdate = false;
         
@@ -24,7 +25,7 @@ namespace NetSparkleChecker
             string[] args = Environment.GetCommandLineArgs();
 
             // init sparkle
-            _sparkle = new Sparkle(args[2], icon, SecurityMode.UseIfPossible, null, args[1]);
+            _sparkle = new SparkleForms(args[2], icon, SecurityMode.UseIfPossible, null, args[1]);
             
             // set labels
             lblRefFileName.Text = args[1];
@@ -34,6 +35,8 @@ namespace NetSparkleChecker
             Icon = icon;            
 
             bckWorker.RunWorkerAsync();
+
+            FormClosed += (s,e) => _sparkle?.Dispose();
         }
 
         public void ShowUpdateUI()
