@@ -166,7 +166,7 @@ namespace NetSparkle
         /// <summary>
         /// ctor which needs the appcast url
         /// </summary>
-        /// <param name="appcastUrl">the URL of the appcast file</param>
+        /// <param name="appcastUrl">the URL of the appcast file
         /// If invoking this from a form, this would be <c>this.Icon</c>.</param>
         /// <param name="securityMode">the security mode to be used when checking DSA signatures</param>
         public Sparkle(string appcastUrl, SecurityMode securityMode)
@@ -176,7 +176,7 @@ namespace NetSparkle
         /// <summary>
         /// ctor which needs the appcast url
         /// </summary>
-        /// <param name="appcastUrl">the URL of the appcast file</param>
+        /// <param name="appcastUrl">the URL of the appcast file
         /// If invoking this from a form, this would be <c>this.Icon</c>.</param>
         /// <param name="securityMode">the security mode to be used when checking DSA signatures</param>
         /// <param name="dsaPublicKey">the DSA public key for checking signatures, in XML Signature (&lt;DSAKeyValue&gt;) format.
@@ -188,13 +188,12 @@ namespace NetSparkle
         /// <summary>
         /// ctor which needs the appcast url and a referenceassembly
         /// </summary>        
-        /// <param name="appcastUrl">the URL of the appcast file</param>
+        /// <param name="appcastUrl">the URL of the appcast file
         /// If invoking this from a form, this would be <c>this.Icon</c>.</param>
         /// <param name="securityMode">the security mode to be used when checking DSA signatures</param>
         /// <param name="dsaPublicKey">the DSA public key for checking signatures, in XML Signature (&lt;DSAKeyValue&gt;) format.
         /// If null, a file named "NetSparkle_DSA.pub" is used instead.</param>
         /// <param name="referenceAssembly">the name of the assembly to use for comparison when checking update versions</param>
-        /// <param name="factory">a UI factory to use in place of the default UI</param>
         public Sparkle(string appcastUrl, SecurityMode securityMode, string dsaPublicKey, string referenceAssembly)
         {
             ExtraJsonData = "";

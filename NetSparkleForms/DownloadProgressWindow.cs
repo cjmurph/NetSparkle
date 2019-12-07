@@ -104,7 +104,7 @@ namespace NetSparkleForms
         /// <summary>
         /// Event called when the client download progress changes
         /// </summary>
-        private void OnDownloadProgressChanged(object sender, long bytesReceived, long totalBytesToReceive, int percentage)
+        private void OnDownloadProgressChanged(long bytesReceived, long totalBytesToReceive, int percentage)
         {
             progressDownload.Value = percentage;
             downloadProgressLbl.Text = " (" + Utilities.NumBytesToUserReadableString(bytesReceived) + " / " + 
@@ -116,7 +116,7 @@ namespace NetSparkleForms
         /// </summary>
         public void OnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            OnDownloadProgressChanged(sender, e.BytesReceived, e.TotalBytesToReceive, e.ProgressPercentage);
+            OnDownloadProgressChanged(e.BytesReceived, e.TotalBytesToReceive, e.ProgressPercentage);
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace NetSparkleForms
             btnInstallAndReLaunch.Enabled = shouldBeEnabled;
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();

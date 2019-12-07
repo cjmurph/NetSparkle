@@ -132,7 +132,7 @@ namespace NetSparkleForms
         /// </summary>
         public event DownloadEvent DownloadError;
 
-        private SynchronizationContext _syncContext;
+        private readonly SynchronizationContext _syncContext;
         
         private readonly Icon _applicationIcon;
         private bool _useNotificationToast;
@@ -213,8 +213,10 @@ namespace NetSparkleForms
         /// <param name="factory">a UI factory to use in place of the default UI</param>
         public SparkleForms(string appcastUrl, Icon applicationIcon, SecurityMode securityMode, string dsaPublicKey, string referenceAssembly, IFormsFactory factory)
         {
-            Sparkle = new Sparkle(appcastUrl, securityMode, dsaPublicKey, referenceAssembly);
-            Sparkle.ShowsUIOnMainThread = true;
+            Sparkle = new Sparkle(appcastUrl, securityMode, dsaPublicKey, referenceAssembly)
+            {
+                ShowsUIOnMainThread = true
+            };
             Sparkle.AboutToExitForInstallerRun += Sparkle_AboutToExitForInstallerRun;
             Sparkle.AboutToExitForInstallerRunAsync += Sparkle_AboutToExitForInstallerRunAsync;
             Sparkle.CheckLoopFinished += Sparkle_CheckLoopFinished;
